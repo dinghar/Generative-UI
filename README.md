@@ -1,4 +1,4 @@
-# Responsive UI
+# Generative UI
 
 This is a thought experiment on using generative AI to update website content based on user actions.
 
