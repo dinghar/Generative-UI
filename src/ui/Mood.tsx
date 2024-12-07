@@ -6,10 +6,13 @@ import { parseStyleString } from "../utils";
 
 export function Mood() {
   const [css, setCss] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function update(value: string) {
     const cssPrompt = cssDiaryPrompt(value);
+    setIsLoading(true);
     const cssCode = await generateCode(cssPrompt, css, CodeType.CSS);
+    setIsLoading(false);
     setCss(cssCode);
   }
 
@@ -22,7 +25,9 @@ export function Mood() {
 
   return (
     <>
-      Tell me about your day
+      <div style={{ display: "flex" }}>
+        How was your day?{isLoading ? "🤔" : ""}
+      </div>
       <br />
       <Input onChange={debouncedUpdate} />
     </>

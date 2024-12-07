@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
-import { Input } from "./Input";
 import { Mood } from "./Mood";
-import { JSXRenderer } from "./JsxRenderer";
-import { CodeType, generateCode, loadModel } from "../codeGenerator";
+import { loadModel } from "../codeGenerator";
+import { InputRenderer } from "./InputRenderer";
 
 function App() {
   const [hasLoadedModel, setHasLoadedModel] = useState(false);
-  const [jsx, setJsx] = useState<string | null>(null);
-
-  async function updatePage(value: string) {
-    const code = await generateCode(value, jsx, CodeType.JSX);
-    setJsx(code);
-  }
 
   useEffect(() => {
     const load = async () => {
@@ -30,7 +23,7 @@ function App() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "20px",
+        gap: "100px",
       }}
     >
       <div
@@ -39,9 +32,8 @@ function App() {
           flexDirection: "column",
         }}
       >
-        <p>Render JSX:</p>
-        <Input onSubmit={updatePage} />
-        <JSXRenderer jsxString={jsx} />
+        <p>Render user input:</p>
+        <InputRenderer />
       </div>
       <div
         style={{

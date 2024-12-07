@@ -12,4 +12,4 @@ To start, it's pretty simple. There are two interactions implemented.
 
 ## Tech
 
-For now, this uses [WebLLM](https://github.com/mlc-ai/web-llm) for inference to keep it free, but latency is a problem.
+For now, I'm using [WebLLM](https://github.com/mlc-ai/web-llm) for inference since it's free and requires no setup, but latency is a problem.
