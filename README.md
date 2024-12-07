@@ -2,9 +2,13 @@
 
 This is a thought experiment on using generative AI to update website content based on user actions.
 
-To start, it's just using text input from the user to determine what to render.
+To start, it's pretty simple. There are two interactions implemented.
 
-Later on, the plan is to track user actions to determine user desires, and update the site accordingly.
+1. Render user input
+   The user dictates what they want to be rendered, and it is displayed in the page.
+
+2. Style based on sentiment of user input
+   The user writes a diary entry. As they write, the sentiment is determined and the styling of the site updates.
 
 ## Tech
 

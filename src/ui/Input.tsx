@@ -1,11 +1,13 @@
 import { useState } from "react";
 
 type InputProps = {
-  onSubmit: (value: string) => void;
+  onSubmit?: (value: string) => void;
+  onChange?: (value: string) => void;
 };
 
-export function Input({ onSubmit }: InputProps) {
+export function Input({ onSubmit, onChange }: InputProps) {
   const [value, setValue] = useState<string>("");
+
   return (
     <>
       <textarea
@@ -13,9 +15,10 @@ export function Input({ onSubmit }: InputProps) {
         onChange={(e) => {
           const newValue = e.target.value;
           setValue(newValue);
+          onChange && onChange(newValue);
         }}
       />
-      <button onClick={() => onSubmit(value)}>Enter</button>
+      {onSubmit && <button onClick={() => onSubmit(value)}>Enter</button>}
     </>
   );
 }
