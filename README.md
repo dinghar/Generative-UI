@@ -4,11 +4,9 @@ This is a thought experiment on using generative AI to update website content ba
 
 To start, it's pretty simple. There are two interactions implemented.
 
-1. Render user input
-   The user dictates what they want to be rendered, and it is displayed in the page.
+1. **Render user input:** The user dictates what they want to be rendered, and it is displayed in the page.
 
-2. Style based on sentiment of user input
-   The user writes a diary entry. As they write, the sentiment is determined and the styling of the site updates.
+2. **Style based on sentiment of user input:** The user writes a diary entry. As they write, the sentiment is determined and the styling of the site updates.
 
 ## Tech
 
